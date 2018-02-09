@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>Nabil's BitcoinViewer</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="scripts/script.js" async></script>
+</head>
+
+<body>
+    <div class="copyright no-margin"> &copy; Nabil's BitCoinViewer, 2018. Powered by <a href="http://www.chartjs.org/" target="_blank">Chart.JS</a> &amp; <a href="https://www.coindesk.com/" target="_blank">CoinDesk</a></div>
+    <div class="main-wrapper">
+        <div class="main">
+            <h3 class="title">BitCoin Value:</h3>
+            <p class="under-title"></p>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            <script>
+                var xmlhttp = new XMLHttpRequest();
+                var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var json = JSON.parse(this.responseText);
+                            var USDValue = json.bpi.USD.rate_float;
+                            document.querySelector(".title").innerHTML = "BitCoin Value: <span style='font-weight: bold;'>$" + USDValue.toString() + '</span>';
+                            addData(currentTime, USDValue)
+                        }
+                    };
+                    function getNewValue() {
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send()
+                }
+
+                window.onload = function() {
+                  updateTime();
+                  getNewValue();
+                }
+                setInterval(function() {
+                    updateTime();
+                    getNewValue();
+                }, 60000)
+
+                function updateTime() {
+                    var d = new Date();
+                    var h = d.getHours();
+                    var m = d.getMinutes();
+                    if (h < 10) {
+                        h = "0" + h;
+                    }
+                    if (m < 10) {
+                        m = "0" + m;
+                    }
+                    currentTime = h + ":" + m;
+                    document.querySelector(".under-title").textContent = "Last currency update: " + currentTime + ". The value is shown as (USD) American Dollars.";
+                }
+
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            label: "Bitcoin Value ($)",
+                            fill: false,
+                            borderColor: "rgb(75, 192, 192)",
+                            backgroundColor: "rgb(75, 192, 192)",
+                            borderDash: [5, 5],
+                            borderWidth: 3,
+                            data: [],
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {
+
+                        legend: {
+                            display: true
+                        },
+
+                        tooltips: {
+                            position: "nearest",
+                            intersect: false,
+                        },
+
+                    }
+                });
+
+                function changeData(point, label, value) {
+                    var arrayNumber = point - 1;
+                    chart.data.labels[arrayNumber] = label;
+                    chart.data.datasets[0].data[arrayNumber] = value;
+                    chart.update();
+                }
+
+                function addData(label, data) {
+                    chart.data.labels.push(label);
+                    chart.data.datasets.forEach((dataset) => {
+                        dataset.data.push(data);
+                    });
+                    chart.update();
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
