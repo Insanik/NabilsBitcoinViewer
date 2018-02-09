@@ -15,9 +15,9 @@ An open-source realtime Bitcoin viewer.
 
 - Make sure you have a stable internet connection as the Bitcoin currency is retrieved by CoinDesk API.
 
-### Extra
+## How to use
 
-- Note that the graph updates every 1 minute to retrieve and add new data.
+- Just wait, the graph updates every 1 minute to retrieve and add new data.
 
 ## Features
 
