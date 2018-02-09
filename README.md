@@ -21,10 +21,12 @@ An open-source realtime Bitcoin viewer.
 
 ## Features
 
-- Realtime Bitcoin values
-- 100% Client-side *
-- Sleek & Professional design
-- Totally free
+- Realtime Bitcoin values.
+- 100% Client-side. *
+- Sleek & Professional design.
+- Totally free.
+
+*N.B. Needs internet connection to function*
 
 ## Contributing
 
