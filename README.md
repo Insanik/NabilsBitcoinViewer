@@ -7,7 +7,7 @@ An open-source realtime Bitcoin viewer.
 
 ### Installing
 
-- Start by cloning this project.
+- Start by downloading this project.
 - Extract it anywhere on your PC.
 - Open index.htm with these recommended web browsers *(Google Chrome, Firefox, Safari, Opera)*.
 
@@ -26,7 +26,7 @@ An open-source realtime Bitcoin viewer.
 - Sleek & Professional design.
 - Totally free.
 
-*N.B. Needs internet connection to function*
+*N.B. Needs internet connection to function.*
 
 ## Contributing
 
@@ -42,7 +42,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- [Chart.JS](chartjs.org) - JavaScript Chart Library (v. 2.7.1)
+- [Chart.JS](chartjs.org) - JavaScript Chart Library (v. 2.7.1).
 - [CoinDesk](chartjs.org) - Bitcoin currency API.
 - [PurpleBooth](https://gist.github.com/PurpleBooth) - Readme template.
 
