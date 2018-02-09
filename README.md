@@ -9,7 +9,7 @@ An open-source realtime Bitcoin viewer.
 
 - Start by downloading this project.
 - Extract it anywhere on your PC.
-- Open index.htm with these recommended web browsers *(Google Chrome, Firefox, Safari, Opera)*.
+- Open index.html with these recommended web browsers *(Google Chrome, Firefox, Safari, Opera)*.
 
 ### Prerequisites
 
