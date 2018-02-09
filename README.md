@@ -5,4 +5,5 @@ An open-source realtime Bitcoin viewer.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+- Start by cloning this project.
+- Extract it anywhere and open index.htm with recommended web-browser (Google Chrome, Firefox, Safari, Opera).
