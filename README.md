@@ -17,7 +17,7 @@ An open-source realtime Bitcoin viewer.
 
 ## How to use
 
-- Just wait, the graph updates every 1 minute to retrieve and add new data.
+- Just wait, no user-input needed. The graph updates every 1 minute to retrieve and add new data.
 
 ## Features
 
