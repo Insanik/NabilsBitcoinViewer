@@ -36,7 +36,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- [Chart.JS](chartjs.org) - JavaScript Chart Library.
+- [Chart.JS](chartjs.org) - JavaScript Chart Library (v. 2.7.1)
 - [CoinDesk](chartjs.org) - Bitcoin currency API.
 - [PurpleBooth](https://gist.github.com/PurpleBooth) - Readme template.
 
